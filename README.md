@@ -33,22 +33,16 @@ Python 으로 PG 연동을 쉽게 만들어 주고 현재는 빌링결제만 되
 
 빌링 키로 결제
 
-.. code-block:: python
-
     response = wp.bill_pay(**payload)
 
 ------
 
 카드사 가져오기
 
-.. code-block:: python
-
     response = wp.serch_card_prefix(**payload)
 
 ------
 
 전체 취소
-
-.. code-block:: python
 
     response = wp.cancle(**payload)
