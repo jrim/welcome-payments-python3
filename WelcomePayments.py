@@ -6,12 +6,17 @@ import json
 
 __all__ = ['WELCOME_API_URL', 'WelcomePayments']
 
-WELCOME_API_URL = 'https://tpayapi.paywelcome.co.kr/'
+T_WELCOME_API_URL = 'https://tpayapi.paywelcome.co.kr/'
+WELCOME_API_URL = 'https://payapi.paywelcome.co.kr/'
 
 class WelcomePayments(object):
-    def __init__(self, mid, sign_key, wp_url=WELCOME_API_URL):
+    def __init__(self, mid, sign_key, mode):
         self.mid = mid
-        self.wp_url = wp_url
+        if mode == 'DEV':
+            self.wp_url = T_WELCOME_API_URL
+        elif mode == 'DEPLOY':
+            self.wp_url = WELCOME_API_URL
+
         self.mkey = hashlib.sha256(sign_key.encode()).hexdigest()
 
         requests_session = requests.Session()
