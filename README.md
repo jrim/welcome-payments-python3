@@ -13,8 +13,6 @@ Python 으로 PG 연동을 쉽게 만들어 주고 현재는 빌링결제만 되
 
 사용하기 위해 객체를 만듭니다.
 
-.. code-block:: python
-
     from welcome_payments import WelcomePayments
 
     wp = WelcomePayments(mid='{발급받은 MID}', sign_key='{발급받은 signKey}', mode='DEV')
@@ -24,8 +22,6 @@ Python 으로 PG 연동을 쉽게 만들어 주고 현재는 빌링결제만 되
 ------
 
 빌링 키 발급
-
-.. code-block:: python
 
     response = wp.get_bill_key(**payload)
 
